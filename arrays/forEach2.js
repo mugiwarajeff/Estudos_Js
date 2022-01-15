@@ -1,4 +1,4 @@
-// vamos implementar um metodos forEach
+// vamos implementar um metodos forEach2 para simular o comportamento
 
 Array.prototype.forEach2 = function(callback){
     for (let i = 0; i < this.length; i++){
