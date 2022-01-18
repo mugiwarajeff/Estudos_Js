@@ -18,6 +18,8 @@ for (let i = 0; i < alunos.length; i++){
 }
 console.log(total/alunos.length);
 
+
+// declarativa
 const getNota = aluno => aluno.nota;
 const getTotalNota = (acumulador, atual) => acumulador + atual;
 

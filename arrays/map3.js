@@ -1,9 +1,9 @@
 //refazendo metodo map 
 
 Array.prototype.map2 = function(callback){
-    newArray =[]
+    const newArray =[]
     for (let i = 0; i < this.length; i++){
-        newArray.push(callback(this[i]))
+        newArray.push(callback(this[i], i, this))
     }
     return newArray
 }

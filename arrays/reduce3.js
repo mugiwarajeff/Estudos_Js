@@ -3,7 +3,7 @@
 Array.prototype.reduce2 = function(callback, valorInicial=0||true){
 let acumulador = valorInicial
     for (let i = 0; i < this.length; i++){
-        acumulador = callback(acumulador, this[i]);
+        acumulador = callback(acumulador, this[i], i, this);
         
     }
     return acumulador
