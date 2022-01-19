@@ -1,13 +1,21 @@
-const getValores = valor => valor.key
+const getValores = (acumulador, atual) => acumulador + atual
+const getValue = valor => valor[1];
 function receberMelhorEstudante(objeto){
-    const paresChavesValores = Object.entries(objeto);
+    obj = {}
+    somados = Object.values(objeto).map(valor => valor.reduce(getValores)); 
+    parDeChaves = Object.keys(objeto);
+    medias = somados.map(valor => valor/4)
 
-    const parValor = paresChavesValores.map(getValores);
-    console.log(parValor);
-    console.log(objeto)
-    console.log(paresChavesValores.reduce((acumulador, total) => acumulador + total));
+    for (let i = 0; i < parDeChaves.length; i++){
+        obj[parDeChaves[i]] = medias[i];
+    }
 
-    
+    const parChaveValorMedia = Object.entries(obj)
+    const parChaveValorMediaOrdenado = parChaveValorMedia.sort((a, b) => b[1] - a[1]);
+
+    const objRetorno = {}
+    objRetorno[parChaveValorMediaOrdenado[0][0]] = parChaveValorMediaOrdenado[0][1]
+    return objRetorno
 }
 
 
@@ -17,4 +25,4 @@ objeto = {
     carla: [7,7,8,9]
 }
 
-receberMelhorEstudante(objeto);
+console.log(receberMelhorEstudante(objeto));
