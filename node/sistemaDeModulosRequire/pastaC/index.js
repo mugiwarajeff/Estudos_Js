@@ -1,0 +1,1 @@
+module.exports.teste = "eu sou o modulo da pasta C"
