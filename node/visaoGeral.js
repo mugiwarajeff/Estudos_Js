@@ -1,9 +1,13 @@
 /**
- * -Node é muito utilizado como uma solução backend para aplicações web
- * -Hoje em dia é muito comum ver em aplicações modernas
- * -É interessante que aplicações que são executadas como frontend pelo navegador acabam sendo arquivos mais leves por conta do peso em rodar a aplicação
- * -Já soluções do servidor podem ser executados como arquivos mais complexos
+ * foi uma revolução na web para backend e hoje em dia é muito comum numa aplicação moderna
  * 
- * -Então node acaba sendo um ambiente de execução de js do lado do servidor
- * -Sendo que os event loops dos processos são mono threads e encaminham atividades para threads diversos
+ * o codigo roda no servidos
+ * as aplicações frontend tem que se organizar de uma forma que o arquivo seja leve, pois será executado diretamente
+ * pelo browser
+ *
+ * -Diferentemente de uma aplicação web que pode rodar no servidor com um peso maior
+ * -Então o node é um ambiente de execução de js do lado do servidor 
+ * -E contem um event loop que trabalha em mono thread e distribui os dados para varios threads diferentes
+ * 
+ * 
  */
