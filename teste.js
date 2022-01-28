@@ -8,4 +8,4 @@
 
 // console.log(`meu nome é ${nome}`);0,
 
-123 + 3
+console.log(isNaN("sei la"));
