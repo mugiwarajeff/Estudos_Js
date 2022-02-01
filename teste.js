@@ -8,4 +8,8 @@
 
 // console.log(`meu nome é ${nome}`);0,
 
-console.log(isNaN("sei la"));
+
+let string = "1";
+
+let novoNumero = Number(string)
+console.log(novoNumero, typeof novoNumero);
