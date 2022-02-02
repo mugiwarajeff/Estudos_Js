@@ -1,21 +1,25 @@
 //refaturando o exemplo das callbacks aninhadas com promise 
 
 const http = require("http");
+//const { get } = require("https");
 
-const getTurma = letra => {
+const getTurma = letra =>{
     const url = `http://files.cod3r.com.br/curso-js/turma${letra}.json`;
     return new Promise((resolve, reject) => {
-        http.get(url, res => {
-            resultado = "";
+        //let resultado = ""; 
 
-            res.on("data", dados => { //vai adicionando ao resultado a medida que os dados vão chegando 
+        http.get(url, res => {
+            let resultado = "";
+
+            res.on("data", dados => {
                 resultado += dados;
             })
 
             res.on("end", () => {
-                try {
+                try{
                     resolve(JSON.parse(resultado));
-                }catch(e) {
+                }catch(e){
+                    console.log("deu merda")
                     reject(e);
                 }
             })
@@ -24,6 +28,8 @@ const getTurma = letra => {
 }
 
 Promise.all([getTurma("A"), getTurma("B"), getTurma("C")])
-.then(turmas => [].concat(...turmas))
-.then(alunos => alunos.map(aluno => aluno.nome))
-.then(valorFinal => console.log(valorFinal));
+.then(resultados => [].concat(...resultados))
+.then(turma => turma.map(aluno => aluno.nome))
+.then(mostra => console.log(mostra));
+
+//refazendo para testar

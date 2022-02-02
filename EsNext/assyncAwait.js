@@ -11,7 +11,7 @@ const getTurma = letra => {
             let resultado = "";
 
             res.on("data", dados => {
-                resultado += dados
+                resultado += dados;
             })
 
             res.on("end", () => {
@@ -20,7 +20,7 @@ const getTurma = letra => {
                 }catch(e) {
                     reject(e)
                 }
-            })
+            }) 
         })
     })
 }
