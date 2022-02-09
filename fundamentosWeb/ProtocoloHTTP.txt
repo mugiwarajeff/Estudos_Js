@@ -1,0 +1,45 @@
+HTTP = Hyper Text Transfer Protocol
+
+-Protocolo de transferencia de hiper texto
+    -Ou seja, é um grande texto contendo links
+    -Hoje em dia existem outro tipo de midia que é linkado, como imagens, musicas, videos, css, js e etc
+
+-Camada de Aplicação
+    -É um protocolo que precisa sem conhecidos por devs web
+
+-Protocolo Stateless
+    -Ou seja é um protocolo que não gera contagem durante seu processo, ou seja, "sempre será a primeira vez"
+    -Sem state
+
+-Protocolo Cliente-Servidor Baseado em requisições e respostas para um servidor
+-Geralmente as respostas são arquivos mais leves como Json e etc
+
+-Opera sobre o procotolo TCP/IP
+
+-Ele faz Requisições baseadas nas referencias que são passadas do codigo
+
+-Fluxo Basico do HTTP
+    -Usuario informa URL
+    -Browser gera a requisição 
+    -Servidor Web gera a resposta 
+    -Browser renderiza arquivos da pagina
+
+-Principais Metodos do HTTP (verbos)
+    -Get(importante), Post(importante), Put, Delete, Trace, Options, Connect, Head
+
+-Temos url + params como requisições e arquivos como respostas, para serem renderizados
+
+-É uma boa pratica manter os arquivos mais centralizados para termos menos Requisições
+
+-Exemplo de requisição tipo Get
+    -www.google.com.br/search?q=linux&hl=pt-Browser
+
+-Exemplo de requisição tipo Post
+    -accounts.google.com/signin
+
+-Grupos de status no protocolo http
+    -1xx - Informação 
+    -2xx - sucesso
+    -3xx - Redirecionamento
+    -4xx - Erro no Cliente
+    -5xx - Erro no Servidor

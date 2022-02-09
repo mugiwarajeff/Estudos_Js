@@ -1,0 +1,8 @@
+HTML -> É uma linguagem de marcação da pagina
+CSS -> é uma ferramente para estilisação da pagina, tudo que diz respeito a estilo é feito pelo css
+    -cores, tamanhos, alinhamentos e etc
+
+JS -> é a linguagem de programação que serve para dar dinamismo a uma pagina da web, executando as ações da pagina
+
+-Antigamente essas 3 tecnologias eram executadas separadamentes, sendo que o contrario era considerado uma má prática
+-O que não se faz regra hoje em dia, devido as novas ferramentas e novas formas de trabalho

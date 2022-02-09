@@ -1,0 +1,38 @@
+capitulo apenas para conceitos sobre desenvolvimento pra web
+
+-Computação em nuvem 
+-Historia da computação em web
+-Topologias de rede: 
+    -as Topologias mais comuns são a centralizada, porém na web a topologia acaba sendo distribuida, já que se um dos pontos cair, teremos outras rotas
+
+-Podemos ter redes em diferentes niveis: 
+    -tier1
+    -tier2
+    -tier3
+
+-Sobre o protocolo TCP/IP
+    -Significa tranmission Control Protocol / Internet Protocol
+    -Acaba Funcionando em pilha
+    -É um protocolo orientado a camada de transporte e a conexão, os devs se preocupam menos com esse protocolo
+    -Existe o protocolo de IP que é usado para identificação de endereços, e responsavel pela comunicação entre redes
+    -E é baseado no padrão de projeto de layers, onde cada processo roda em uma camada diferente
+        -Fisica(wifi, ethernet, endereço mac e enlace)
+        -internet(ip, conexão entre redes, transparencia de pacotes)
+        -Transporte(TCP, UDP, comunicação host-a-host, confiabilidade e integridade)
+        -Aplicação(http, ftp, smtp, Processo-a-processo, numero de porta)
+
+-Anatomia do IPV4
+    classe A: 192.<168.100.130> -> poucas redes, muitos hosts 
+    classe B: 192.168.<100.130>
+    classe C: 192.168.100.<130> -> muitas redes, poucos hosts
+
+    -Todas as classes são definidas pela mascara de sub-rede
+    classeA: 255.0.0.0
+    classe B: 255.255.0.0
+    classe C: 255.255.255.0
+
+    -Também podemos subdividir uma rede classe C atraves de uma mascara de sub-rede
+
+-Conceito de Porta
+    -Toda aplicação utiliza uma porta para se comunicar
+    -Nada mais é que um processo em execução

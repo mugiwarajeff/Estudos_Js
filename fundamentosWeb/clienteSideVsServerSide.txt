@@ -1,0 +1,15 @@
+-É uma importante escolha arquitetural
+
+-Evolução das arquiteturas: 
+    -mainframe: totalmente centralizado
+    -Client-server: existiam 3 camadas, sendo um cliene, cliente rico e um middleware e tinham muitas dificuldades para atualizar
+    -Web-server-side: Toda a logica de renderização é feita pelo servidor
+        -Cliente age como um terminal burro
+        -Servidor também replica a aplicação
+    -frontend+servies: 
+        -Acesso ao servidor é mais para obtenção de dados
+        -Os clientes são ricos
+        -É baseado em SPA, single page aplication, onde apenas uma pagina gera o restante do conteudo de forma dinamica, atraves do Js
+    
+-Podemos ter operações mistas
+

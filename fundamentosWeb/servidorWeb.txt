@@ -1,0 +1,21 @@
+-O servidor DNS é responsavel por transformar a requisição http em um endereço de IP que será acessado pelo servidor de destino da requisição
+
+-O DNS demora algum tempo para ser atualizado
+
+-Hoje em dia temos acesso a Virtual Hosting: uma forma de utilizar mais de um servidor para aplicações web que são grandes 
+-É comum mantermos também uma estrutura de pastas coerentes, separando imagens, css, js, index.html e etc
+
+-Existem servidores especificos para conteudos estaticos, que facilitiram e otimizam o tempo de execução da aplicação
+
+-O web Stack é formado por: 
+    -Linguagem
+    -Web Server
+    -Banco de dados
+    -Sistema Operacional 
+
+-A stack mais famosa é o LAMP: 
+    -linux
+    -apashe
+    -mySQL
+    -PHP
+    

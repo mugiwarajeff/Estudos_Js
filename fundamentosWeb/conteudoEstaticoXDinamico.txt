@@ -1,0 +1,8 @@
+-Conteudo estatico, é aquele que é lido em HD ou Adquirido pelo servidor, um arquivo que não foi gerado automaticamente 
+
+-Já o conteudo Dinamico, é todo aquele que foi gerado através de código
+
+-hoje em dia depende da referencia para consideramos um conteudo como dinamico ou estatico
+    -Pois algo pode ser dinamico de um ponto de vista, como do cliente, mas estatico do ponto de vista do servidor (como o framework react)
+
+-O conteudo estatico é mais facil de ser obtido, então é comuns aplicações se basearem nisso para gerarem arquivos estaticos via codigo no backend
