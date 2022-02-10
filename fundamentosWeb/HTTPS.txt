@@ -1,0 +1,19 @@
+-HTTPS significa um protocolo http seguro com criptografica de dados
+
+-Geralmente http + TLS e http + SSL
+
+TLS: Transport Layer Security Protocol (evolução do SSL)
+
+SSL: Secure sockets layer Protocol
+
+-Existem uma diferença entre protocolos de criptografia e certificados, eles não são os mesmos conceitos
+-Existem certificados diferentes que validam conforme os protocolos, então os certificados utilizam dos protocolos
+
+-É um protocolo que evita ataques ao intermediario que faz a transferencia entre os dados (MITM)
+
+-A criptografia se aplica a todos os dados, cookies, corpo e etc, somente o ip continua sendo visivel, pois precisa dele para chegar ao destino
+
+-Existem Autoridades Certificadores as CA (em ingles) que podem realizar essas certificações para os sites
+
+-O CA chamado lets encrypt pode relizar essa certificação de forma gratuita
+

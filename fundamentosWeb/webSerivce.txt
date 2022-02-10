@@ -1,0 +1,33 @@
+-Hoje em dia são amplamente utilizados
+
+-Basicamente é um serviço web onde, provê um serviço de negocio que resolve algum problema
+
+-Trafegando dados de forma textual, antigamente foi tentado implementar uma forma binaria, porém
+as informações em formatos de textos se mostraram mais faceis de serem integrados (XML, Json e etc)
+
+-Duas formas principal de web service:
+    -SOAP -> SImple Object Acess Protocol
+    -REST -> Rerpresentational State Transfer
+
+-O Padrão SOAP acaba sendo mais burocratico e complexo, diferente do rest
+    -WSDL -> web service descipt language, que é um documento xml que descreve todas as 
+    especificades daquele web service
+
+    -RPC -> Remote Procedural Call -> responsável por realizar chamadas de forma remota
+
+-Rest trabalha juntamente com o HTTP com requisições e respostas que simplificam o processo
+    -Dados via JSON
+    -HTTP Puro -> requisição/respostas
+    -Simples
+    -Convenções:
+        -     URL    | Método  | descrição
+        - /clientes  | Post    | Novo cliente 
+        - /clientes  | Get     | Obtem cliente
+
+-Diferenças arquiteturais:
+    SOA Vs Micro Service
+    
+    -SOA é um padrão mais antigo, baseado em serviçoes que são instalados em um ESB (Enterprise service bus)
+    -Já os micro services, é quando quebramos uma aplicação maior em diferentes serviçoes, geralmente também 
+    dividindo o time de desenvolvimento de cada aplicação, gerando mais autonomia
+

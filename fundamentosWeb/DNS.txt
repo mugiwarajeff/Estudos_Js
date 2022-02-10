@@ -1,0 +1,30 @@
+-O mercado é regido em sua maioria por servidores linux
+
+-Traduz os nomes de dominio em endereços ips
+
+-www(word wide web) é uma convenção e não necessariamente aponta pro endereço com www
+
+-dominios podem ser comprados no site registro.br
+
+-O DNS funciona através do protocolo UDP, em que conexão de melhor rapidez é realizada, funcionando por padrão na porta 53
+
+-Funcionamento do DNS:
+    -Usuário informa o endereço no browser 
+    -Computador envia consulta DNS para servidor local
+    -O Servidor responde com endereço IP 
+    -COmputador acessa o servidor a partir do ip obtido
+
+-Busca Recursiva:
+    onde o servidor vai perguntando de DNS em DNS até achar alguem que saiba o caminho
+
+-Busca Iterativa:
+    onde o servidor obtem uma indicação do servidor DNS de onde procurar, até que ache
+
+
+-DNS Records: 
+    A - IPV4
+    AAA - IPV6
+    MX - Servidor e-mail
+    NS - Servidor DNS
+    Cname - Cnonical Name (apelido)
+    

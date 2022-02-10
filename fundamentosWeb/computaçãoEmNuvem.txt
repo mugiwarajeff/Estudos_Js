@@ -1,0 +1,12 @@
+-A maioria dos servidores de nuvem são construidos com linuxs
+-Inspirado em serviçoes utilitarios, ou seja, você paga o serviço que usa, assim como contas de luz ou de agua
+-Resolveu o problema que tinhamos de ter custos com infraestrutura (Servidores, refrigeração etc)
+-Nos Servidores de infra da amazon a AWS (temos a possibilidade de auto escalonamento)
+
+Classificações: 
+    -Nuvens de infraestrutura (Aws)
+    -Nuvens de Plataforma (google clound)
+    -Nuvens de software como serviço (salesForce)
+
+-Hoje em dia com esses serviçoes, podemos criar startups de forma mais facil
+
