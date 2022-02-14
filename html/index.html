@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body>
+    <header>
+        <h1>Pagina HTML</h1>
+    </header>
+
+    <nav>
+        <a href="./exercicios/teste.html">00-teste ||</a>
+        <a href="./exercicios/malu.html">Amor da minha vida ||</a>
+        <a href="./exercicios/tagsParaTexto.html">01-Tags Para Testo ||</a>
+        <a href="./exercicios/tagsParaTexto2.html">02-Tags Para Testo 2 ||</a>
+    </nav>
+
+    <div id="conteudo"></div>
+
+    <footer>
+        <br>
+        Curso de Web Moderno
+    </footer>
+    <script>
+        document.querySelectorAll("a").forEach(link =>{
+            const conteudo = document.getElementById("conteudo");
+            console.log(link);
+            link.onclick = function(e) {
+                e.preventDefault();
+                fetch(link.href)
+                .then(resp => resp.text())
+                .then(html => conteudo.innerHTML = html);
+            }
+        })
+    </script>
+</body>
+</html>
