@@ -16,6 +16,8 @@
         <a href="./exercicios/malu.html">Amor da minha vida ||</a>
         <a href="./exercicios/tagsParaTexto.html">01-Tags Para Testo ||</a>
         <a href="./exercicios/tagsParaTexto2.html">02-Tags Para Testo 2 ||</a>
+        <a href="./exercicios/listas.html">03- Listas ||</a><br>
+        <a href="./exercicios/listasAninhadas.html">04- Listas Aninhadas ||</a>
     </nav>
 
     <div id="conteudo"></div>
@@ -27,7 +29,6 @@
     <script>
         document.querySelectorAll("a").forEach(link =>{
             const conteudo = document.getElementById("conteudo");
-            console.log(link);
             link.onclick = function(e) {
                 e.preventDefault();
                 fetch(link.href)
