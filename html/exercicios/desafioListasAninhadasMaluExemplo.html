@@ -1,0 +1,88 @@
+<!--"http://files.cod3r.com.br/curso-web/tree.css"-->
+
+<h1>Coisas que eu amo nela:</h1>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<ul class="tree">
+    <li>Fisica</li>
+    <button id="btn-fisica" onclick="mostra('fisica')"></button>
+    <ul id="fisica">
+        <li>cabelo</li>
+        <button id="btn-cabelo" onclick="mostra('cabelo')"></button>
+        <ul id="cabelo">
+            <li>conteudo1</li>
+            <li>conteudo2</li>
+        </ul>
+        <li>boca</li>
+        <button id="btn-boca" onclick="mostra('boca')"></button>
+        <ul id="boca">
+            <li>conteudo1</li>
+            <li>conteudo2</li>
+        </ul>
+        <li>olhos</li>
+        <button id="btn-olhos" onclick="mostra('olhos')"></button>
+        <ul id="olhos">
+            <li>conteudo1</li>
+            <li>conteudo2</li>
+        </ul>
+        <li>pescoço</li>
+        <button id="btn-pescoco" onclick="mostra('pescoco')"></button>
+        <ul id="pescoco">
+            <li>conteudo1</li>
+            <li>conteudo2</li>
+        </ul>
+        <li>Pés</li>
+        <button id="btn-pes" onclick="mostra('pes')"></button>
+        <ul id="pes">
+            <li>conteudo1</li>
+            <li>conteudo2</li>
+        </ul>
+    </ul>
+
+    <li>Personalidade</li>
+    <button id="btn-personalidade" onclick="mostra('personalidade')"></button>
+    <ul id="personalidade">
+        <li>Simpática</li>
+        <button id="btn-simpatica" onclick="mostra('simpatica')"></button>
+        <ul id="simpatica">
+            <li>conteudo1</li>
+            <li>conteudo2</li>
+        </ul>
+        <li>Esforçada</li>
+        <button id="btn-esforçada" onclick="mostra('esforçada')"></button>
+        <ul id="esforçada">
+            <li>conteudo1</li>
+            <li>conteudo2</li>
+        </ul>
+        <li>Autruista</li>
+        <button id="btn-autruista" onclick="mostra('autruista')"></button>
+        <ul id="autruista">
+            <li>conteudo1</li>
+            <li>conteudo2</li>
+        </ul>
+        <li>Carinhosa</li>
+        <button id="btn-carinhosa" onclick="mostra('carinhosa')"></button>
+        <ul id="carinhosa">
+            <li>conteudo1</li>
+            <li>conteudo2</li>
+        </ul>
+        <li>Estressadinha</li>
+        <button id="btn-estressadinha" onclick="mostra('estressadinha')"></button>
+        <ul id="estressadinha">
+            <li>conteudo1</li>
+            <li>conteudo2</li>
+        </ul>
+    </ul>
+</ul>
+
+<script>
+    function mostra(id){
+        const item = document.getElementById(id);
+        if (item.hidden){
+            item.hidden = false;
+        }else{
+            item.hidden = true;
+        }
+    }
+</script>
