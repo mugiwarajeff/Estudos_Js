@@ -1,0 +1,44 @@
+<h1>Criando nosso formulário</h1>
+
+<form method="post">
+    <input type="text" name="nome">
+    <input type="password" name="senha">
+    
+    <textarea name="bio" cols="30" rows="10"></textarea><br>
+
+    <div>
+    <input class="inline" type="radio" name="admin">Admin</input>
+    <input class="inline" type="radio" name="regular">Regular</input>
+    <input class="inline" type="radio" name="professor">Professor</input>
+    </div>
+
+    <div>
+    <input class="inline" type="checkbox" name="ativo">Ativo</input>
+    </div>
+
+    <div>
+        <select name="interesses" multiple size="4">
+            <option>Python</option>
+            <option>Js</option>
+            <option>Java</option>
+            <option>C</option>
+        </select>
+    </div>
+
+    <div>
+    <button formaction="http://localhost:3003/usuarios">Incluir</button>
+    <button formaction="http://localhost:3003/usuarios/3" formmethod="get">alterar</button>
+    </div>
+</form>
+
+<style>
+    input {
+        display: block;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .inline {
+        display: inline;
+    }
+</style>
