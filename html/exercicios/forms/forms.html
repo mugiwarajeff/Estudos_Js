@@ -1,44 +1,51 @@
-<h1>Criando nosso formulário</h1>
+<h1>
+    Formulário
+</h1> 
 
 <form method="post">
-    <input type="text" name="nome">
-    <input type="password" name="senha">
-    
-    <textarea name="bio" cols="30" rows="10"></textarea><br>
 
     <div>
-    <input class="inline" type="radio" name="admin">Admin</input>
-    <input class="inline" type="radio" name="regular">Regular</input>
-    <input class="inline" type="radio" name="professor">Professor</input>
+        <input type="text" name="nome" class="nome">
+        <input type="password" name="senha">
+    </div>
+
+    <textarea name="bio" cols="30" rows="10"></textarea>
+
+    <div >
+        <input type="radio" name="professor" class="radio">Professor</input>
+        <input type="radio" name="Aluno" class="radio">Aluno</input>
+        <input type="radio" name="Outro" class="radio">Outro</input>
     </div>
 
     <div>
-    <input class="inline" type="checkbox" name="ativo">Ativo</input>
+        <input type="checkbox" name="ativo" class="checkbox">Ativo</input>
     </div>
 
-    <div>
-        <select name="interesses" multiple size="4">
-            <option>Python</option>
-            <option>Js</option>
-            <option>Java</option>
-            <option>C</option>
-        </select>
-    </div>
-
-    <div>
+    <select name="interesses" multiple size="5">
+        <option>Java</option>
+        <option>Js</option>
+        <option>Python</option>
+        <option>C</option>
+        <option>Ruby</option>
+    </select>
     <button formaction="http://localhost:3003/usuarios">Incluir</button>
-    <button formaction="http://localhost:3003/usuarios/3" formmethod="get">alterar</button>
-    </div>
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
 </form>
 
 <style>
-    input {
-        display: block;
-        border-radius: 10px;
-        margin-bottom: 10px;
-    }
-
-    .inline {
+    .radio, .checkbox{
         display: inline;
     }
+    
+    input {
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    select {
+        display: block;
+        margin-bottom: 20px;
+       
+    }
+
 </style>
