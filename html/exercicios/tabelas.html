@@ -1,0 +1,65 @@
+<h1>Tabelas</h1>
+
+<table>
+    <caption>Itens do Carrinho</caption>
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Unidade</th>
+            <th>Quantidade</th>
+            <th>Preço Final</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Notebook i3</td>
+            <td>3.000,00</td>
+            <td>5</td>
+            <td>15.000,00</td>
+        </tr>
+        <tr>
+            <td>Celular xiaomi</td>
+            <td>1.000,00</td>
+            <td>3</td>
+            <td>3.000,00</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td id="total" colspan="3">total</td>
+            <td>18.000,00</td>
+        </tr>
+    </tfoot>
+</table>
+
+<style>
+        table{
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        thead {
+            border-bottom: solid 3px rgb(129, 163, 162)
+        }
+        
+        tbody tr:hover {
+            background-color: rgb(16, 225, 240);
+            color: black;
+        }
+
+        tfoot tr {
+            background-color: black;
+            color:white;
+            font-weight: bold;
+        }
+
+        tfoot #total{
+            /* position: relate; */
+            left: 220px;
+            font-size: 15px;
+        }
+
+</style>
