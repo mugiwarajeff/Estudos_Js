@@ -46,8 +46,9 @@
 
 <style>
     p {
-        position: absolute;
-        right: -1000px;
+        position: fixed;
+        top: 150px;
+        left: 1000px
     }
     .circular {
         width: 513px;
@@ -70,13 +71,26 @@
         background-repeat: no-repeat;
         background-size: 200%;
     }
-    #slider{
-        position: relative;
-    }
 </style>
 
 <script>
    //Criar função que passa valor inicial até valor final
-   
+    valorFinal = {
+        _decrescivo: 1500,
+        get decrescivo(){
+            if (this._decrescivo == -500){
+                this._decrescivo = 1500;
+            }
+            return this._decrescivo--;
+        }
+        
+    }
+
+   document.querySelectorAll("p").forEach(elemento => {
+       setInterval(() => {
+        elemento.style.left = valorFinal.decrescivo
+       }, 10);
+       
+   })
    //fazer callback pra chamar essa função sobre o elemento
 </script>

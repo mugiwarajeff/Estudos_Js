@@ -9,7 +9,9 @@
 // console.log(`meu nome é ${nome}`);0,
 
 
-let string = "1";
+sequencia = {
+    _numero : -1000,
+    get numero(){this._numero++;}
+}
 
-let novoNumero = Number(string)
-console.log(novoNumero, typeof novoNumero);
+setInterval(() => {console.log(sequencia.numero)}, 100);
