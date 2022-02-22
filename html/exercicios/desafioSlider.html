@@ -1,3 +1,4 @@
+
 <h1>
     Pagina de imagens
 </h1>
@@ -57,7 +58,6 @@
         height: 342px;
         background-color: aqua;
     }
-
     .avatar {
         width: 400px;
     }
@@ -79,7 +79,7 @@
    //Criar função que passa valor inicial até valor final
     valorFinal = {
         _decrescivo: 1500,
-        _aumenta: 1000,
+        _aumenta: 0,
         get decrescivo(){
             if (this._decrescivo == -500){
                 this._decrescivo = 1500;
@@ -87,19 +87,46 @@
             return this._decrescivo--;
         },
         get aumenta(){
-            return this._aumenta += 1450
+            return this._aumenta += 3330
         }
     }
 
+    function movimentaImagem2(imagem, inicio, final){
+        imagem.style.left = inicio;
+        while (imagem.style.left > final){
+            imagem.style.left -= 10;
+            console.log(imagem.style.left);
+        }
+    }
     //fazendo movimentação
+    function mostrarSe(documento){
+            let dp = documento.style.display;
+            if (documento.style.display === "block"){
+                documento.style.display = "none"
+            }else {
+                documento.style.display = "block"
+            }
+            //documento.style.display = dp === "none" ? "block":"none"; 
+    }
     function movimentaImagem(imagem){
         setInterval(() => {
         imagem.style.left = valorFinal.decrescivo
+        if (valorFinal._decrescivo === 1499){
+            mostrarSe(imagem);
+            console.log(`entrou em ${valorFinal._decrescivo}`)
+        }
+        if (valorFinal._decrescivo === -499){
+            mostrarSe(imagem);
+            console.log(`entrou em ${valorFinal._decrescivo}`)
+        }
        }, 10);
     }
-
-    document.querySelectorAll("p").forEach(elemento => {  
-        movimentaImagem(elemento);
-    }
+    
+    
+    const arrayElementos = document.querySelectorAll("p");
+    
+    document.querySelectorAll("p").forEach(elemento => { 
+        movimentaImagem2(elemento, 1500, -500)
+    })
    //fazer callback pra chamar essa função sobre o elemento
 </script>
