@@ -47,7 +47,7 @@
 
 <style>
     p {
-        position: fixed;
+        position: absolute;
         top: 150px;
         display: none;
     
@@ -77,21 +77,7 @@
 
 <script>
    //Criar função que passa valor inicial até valor final
-    valorFinal = {
-        _decrescivo: 1500,
-        _aumenta: 0,
-        get decrescivo(){
-            if (this._decrescivo == -500){
-                this._decrescivo = 1500;
-            }
-            return this._decrescivo--;
-        },
-        get aumenta(){
-            return this._aumenta += 3330
-        }
-    }
-
-    async function movimentaImagem2(imagem, inicio, final){
+    async function movimentaImagem(imagem, inicio, final){
         let transicao = inicio;
         imagem.style.display = "block";
         let timer = setInterval(function(){
@@ -102,51 +88,26 @@
                 imagem.style.display = "none";
             }
         }, 10)
-        
-       
-        
     }
     //fazendo movimentação
-    function mostrarSe(documento){
-            let dp = documento.style.display;
-            if (documento.style.display === "block"){
-                documento.style.display = "none"
-            }else {
-                documento.style.display = "block"
-            }
-            //documento.style.display = dp === "none" ? "block":"none"; 
-    }
-    function movimentaImagem(imagem){
-        const timer = setInterval(() => {
-        imagem.style.left = valorFinal.decrescivo
-        // if (valorFinal._decrescivo === 1499){
-        //     mostrarSe(imagem);
-        //     console.log(`entrou em ${valorFinal._decrescivo}`)
-        // }
-        // if (valorFinal._decrescivo === -499){
-        //     mostrarSe(imagem);
-        //     console.log(`entrou em ${valorFinal._decrescivo}`)
-        // }
-        if (imagem.style.left === -400){
-            clearInterval(timer);
-            console.log("executado");
-        }
-       }, 10);
-    }
     
-    
-
     const arrayElementos = document.querySelectorAll("p");
-    setTimeout(() => {movimentaImagem2(arrayElementos[0], 1500, -599)}, 2000)
-    setTimeout(() => {movimentaImagem2(arrayElementos[1], 1500, -599)}, 4000)
-    setTimeout(() => {movimentaImagem2(arrayElementos[2], 1500, -599)}, 6000)
-    setTimeout(() => {movimentaImagem2(arrayElementos[3], 1500, -599)}, 8000)
-    setTimeout(() => {movimentaImagem2(arrayElementos[4], 1500, -599)}, 10000)
-    setTimeout(() => {movimentaImagem2(arrayElementos[5], 1500, -599)}, 12000)
+    setTimeout(() => {movimentaImagem(arrayElementos[0], 1500, -599)}, 2000)
+    setTimeout(() => {movimentaImagem(arrayElementos[1], 1500, -599)}, 4000)
+    setTimeout(() => {movimentaImagem(arrayElementos[2], 1500, -599)}, 6000)
+    setTimeout(() => {movimentaImagem(arrayElementos[3], 1500, -599)}, 8000)
+    setTimeout(() => {movimentaImagem(arrayElementos[4], 1500, -599)}, 10000)
+    setTimeout(() => {movimentaImagem(arrayElementos[5], 1500, -599)}, 12000)
 
-    
-    
+    setInterval(()=>{
+        setTimeout(() => {movimentaImagem(arrayElementos[0], 1500, -599)}, 2000)
+        setTimeout(() => {movimentaImagem(arrayElementos[1], 1500, -599)}, 4000)
+        setTimeout(() => {movimentaImagem(arrayElementos[2], 1500, -599)}, 6000)
+        setTimeout(() => {movimentaImagem(arrayElementos[3], 1500, -599)}, 8000)
+        setTimeout(() => {movimentaImagem(arrayElementos[4], 1500, -599)}, 10000)
+        setTimeout(() => {movimentaImagem(arrayElementos[5], 1500, -599)}, 12000)
 
+    }, 13000)
     
    //fazer callback pra chamar essa função sobre o elemento
 </script>
