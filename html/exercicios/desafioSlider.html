@@ -49,7 +49,7 @@
     p {
         position: fixed;
         top: 150px;
-        display: block;
+        display: none;
     
     }
   
@@ -91,12 +91,20 @@
         }
     }
 
-    function movimentaImagem2(imagem, inicio, final){
-        imagem.style.left = inicio;
-        while (imagem.style.left > final){
-            imagem.style.left -= 10;
-            console.log(imagem.style.left);
-        }
+    async function movimentaImagem2(imagem, inicio, final){
+        let transicao = inicio;
+        imagem.style.display = "block";
+        let timer = setInterval(function(){
+            imagem.style.left = transicao + "px"
+            transicao -= 10
+            if (transicao < final){
+                clearInterval(timer);
+                imagem.style.display = "none";
+            }
+        }, 10)
+        
+       
+        
     }
     //fazendo movimentação
     function mostrarSe(documento){
@@ -109,24 +117,36 @@
             //documento.style.display = dp === "none" ? "block":"none"; 
     }
     function movimentaImagem(imagem){
-        setInterval(() => {
+        const timer = setInterval(() => {
         imagem.style.left = valorFinal.decrescivo
-        if (valorFinal._decrescivo === 1499){
-            mostrarSe(imagem);
-            console.log(`entrou em ${valorFinal._decrescivo}`)
-        }
-        if (valorFinal._decrescivo === -499){
-            mostrarSe(imagem);
-            console.log(`entrou em ${valorFinal._decrescivo}`)
+        // if (valorFinal._decrescivo === 1499){
+        //     mostrarSe(imagem);
+        //     console.log(`entrou em ${valorFinal._decrescivo}`)
+        // }
+        // if (valorFinal._decrescivo === -499){
+        //     mostrarSe(imagem);
+        //     console.log(`entrou em ${valorFinal._decrescivo}`)
+        // }
+        if (imagem.style.left === -400){
+            clearInterval(timer);
+            console.log("executado");
         }
        }, 10);
     }
     
     
+
     const arrayElementos = document.querySelectorAll("p");
+    setTimeout(() => {movimentaImagem2(arrayElementos[0], 1500, -599)}, 2000)
+    setTimeout(() => {movimentaImagem2(arrayElementos[1], 1500, -599)}, 4000)
+    setTimeout(() => {movimentaImagem2(arrayElementos[2], 1500, -599)}, 6000)
+    setTimeout(() => {movimentaImagem2(arrayElementos[3], 1500, -599)}, 8000)
+    setTimeout(() => {movimentaImagem2(arrayElementos[4], 1500, -599)}, 10000)
+    setTimeout(() => {movimentaImagem2(arrayElementos[5], 1500, -599)}, 12000)
+
     
-    document.querySelectorAll("p").forEach(elemento => { 
-        movimentaImagem2(elemento, 1500, -500)
-    })
+    
+
+    
    //fazer callback pra chamar essa função sobre o elemento
 </script>
