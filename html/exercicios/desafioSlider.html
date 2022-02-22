@@ -48,7 +48,7 @@
     p {
         position: fixed;
         top: 150px;
-        left: 1000px
+        display: none;
     }
     .circular {
         width: 513px;
@@ -75,6 +75,12 @@
 
 <script>
    //Criar função que passa valor inicial até valor final
+   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+   async function sleepy(){
+       await sleep(1000)
+   }
+
     valorFinal = {
         _decrescivo: 1500,
         get decrescivo(){
@@ -83,14 +89,41 @@
             }
             return this._decrescivo--;
         }
-        
     }
 
-   document.querySelectorAll("p").forEach(elemento => {
-       setInterval(() => {
-        elemento.style.left = valorFinal.decrescivo
-       }, 10);
-       
-   })
+    //fazendo movimentação
+    function movimentaImagem(imagem){
+        setInterval(() => {
+        imagem.style.left = valorFinal.decrescivo
+       }, 1);
+    }
+
+    let tempo = 3000
+    function mostraImagem(imagem){
+        setInterval(() => {
+        let dp = imagem.style.display;
+        imagem.style.display = dp === "none" ? "block": "none";
+    }, tempo += 100)
+    }
+
+    document.querySelectorAll("p").forEach(elemento => {
+        movimentaImagem(elemento);
+        mostraImagem(elemento);
+    })
+    
+
+    // setTimeout(() => {
+    //     document.querySelectorAll("p")[1].style.display = "block"
+    // }, 6000);
+
+
+    
+
+   
+
+
+
+   
+   
    //fazer callback pra chamar essa função sobre o elemento
 </script>
