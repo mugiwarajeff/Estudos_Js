@@ -9,7 +9,7 @@
 </video>
 
 <div wm-progresso="meuVideo" class="progresso">
-    <div class="ls-animated"></div>
+    <div ></div>
 </div>
 
 <div>
@@ -37,7 +37,11 @@
 </style>
 
 <script>
+    const barra = document.querySelectorAll("[wm-progresso] > div")
     const video = document.getElementById("meuVideo");
+
+    console.log(video.duration)
+
     function playVideo(){
         video.play()
     }
@@ -46,8 +50,5 @@
         video.pause()
     }
 
-    function progressoDecorrido(){
-        console.log(video.duration % 60);
-    }
-    progressoDecorrido()
+   
 </script>
