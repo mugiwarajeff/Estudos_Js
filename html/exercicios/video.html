@@ -1,0 +1,41 @@
+<h1>
+    Tag para video
+</h1>
+
+<video id="meuVideo" width="800" height="400" controls controlsList="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4">
+    não conseguimos executar
+    </source>
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div>20%</div>
+</div>
+
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .progresso {
+        width: 400px;
+        height: 20px;
+        border: solid 1px black;
+        margin: 20px
+    }
+
+    .progresso > div{
+        background-color: red;
+        color: white;
+        font-size: 14px;
+        width: 20%;
+        height: 100%;
+        text-align: right;
+    }
+
+</style>
+
+<script>
+    
+</script>
