@@ -2,14 +2,14 @@
     Tag para video
 </h1>
 
-<video id="meuVideo" width="800" height="400" controls controlsList="nodownload">
+<video id="meuVideo" width="800" height="400" controls controlsList="nodownload" autoplay>
     <source src="http://files.cod3r.com.br/curso-web/video.mp4">
     não conseguimos executar
     </source>
 </video>
 
 <div wm-progresso="meuVideo" class="progresso">
-    <div class="ls-animated"></div>
+    <div>0</div>
 </div>
 
 <div>
@@ -46,8 +46,26 @@
         video.pause()
     }
 
-    function progressoDecorrido(){
-        console.log(video.duration % 60);
+    function getDuracaoVideo(video){
+        let duracaoVideo = 0
+        video.onloadedmetadata = function(){
+            this.duracaoVideo = parseInt(this.duration);
+        }
+        return duracaoVideo
     }
-    progressoDecorrido()
+    function moverBarra(tempoVideo){
+        const barra = document.querySelector("[wm-progresso] > div");
+        let passo = 1;
+        let callbackMovimento = setInterval(()=>{
+            barra.style.width = passo+"%"
+            barra.textContent = passo+"%"
+            passo += 1;
+            if (barra.style.width === "100%"){
+                clearInterval(callbackMovimento)
+            }
+        },100)
+
+    }
+    moverBarra()
+    console.log(getDuracaoVideo(video))
 </script>
