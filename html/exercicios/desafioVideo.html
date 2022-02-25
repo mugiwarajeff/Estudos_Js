@@ -2,7 +2,7 @@
     Tag para video
 </h1>
 
-<video id="meuVideo" width="800" height="400" controls controlsList="nodownload" autoplay>
+<video id="meuVideo" width="800" height="400" controls controlsList="nodownload" autoplay preload="metadata">
     <source src="http://files.cod3r.com.br/curso-web/video.mp4">
     não conseguimos executar
     </source>
@@ -16,6 +16,7 @@
     <button wm-play="meuVideo" onclick="playVideo()">Play</button>
     <button wm-pause="meuVideo" onclick="pauseVideo()">Pause</button>
 </div>
+
 
 <style>
     .progresso {
@@ -40,32 +41,27 @@
     const video = document.getElementById("meuVideo");
     function playVideo(){
         video.play()
+        moverBarra()
     }
 
     function pauseVideo(){
         video.pause()
     }
 
-    function getDuracaoVideo(video){
-        let duracaoVideo = 0
-        video.onloadedmetadata = function(){
-            this.duracaoVideo = parseInt(this.duration);
-        }
-        return duracaoVideo
-    }
     function moverBarra(tempoVideo){
         const barra = document.querySelector("[wm-progresso] > div");
         let passo = 1;
         let callbackMovimento = setInterval(()=>{
-            barra.style.width = passo+"%"
-            barra.textContent = passo+"%"
+            const tempoTotal = video.duration;
+            const tempoAtual = parseInt(video.currentTime);
+            barra.style.width = parseInt((tempoAtual/tempoTotal) * 100)+"%"
+            barra.textContent = parseInt((tempoAtual/tempoTotal) * 100)+"%"
             passo += 1;
             if (barra.style.width === "100%"){
                 clearInterval(callbackMovimento)
             }
-        },100)
+        }, 440.5) //tempo de duração do video x 10 
 
     }
-    moverBarra()
-    console.log(getDuracaoVideo(video))
+    
 </script>
