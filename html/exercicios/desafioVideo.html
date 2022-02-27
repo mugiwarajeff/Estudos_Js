@@ -54,15 +54,13 @@
 
     function moverBarra(tempoVideo){
         const barra = document.querySelector("[wm-progresso] > div");
-        let callbackMovimento = setInterval(()=>{
+        setInterval(()=>{
             const tempoTotal = video.duration;
             const tempoAtual = parseInt(video.currentTime);
-            barra.style.width = parseInt((tempoAtual/tempoTotal) * 100)+"%"
-            barra.textContent = parseInt((tempoAtual/tempoTotal) * 100)+"%"
-            if (barra.style.width === "100%"){
-                clearInterval(callbackMovimento)
-            }
-        }, 440.5) //tempo de duração do video x 10 
+            const percentual = (tempoAtual/tempoTotal) * 100;
+            barra.style.width = `${percentual.toFixed(0)}%`
+            barra.textContent = `${percentual.toFixed(0)}%`
+        },) //tempo de duração do video x 10 
 
     }
 </script>
