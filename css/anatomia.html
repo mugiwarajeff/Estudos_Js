@@ -6,6 +6,23 @@
     <title>Anatomia CSS</title>
     <style>
         /* ... */
+        .selector {
+            font-size: 30px;
+            color: #fff;
+            border: 5px solid rgb(22, 19, 212);
+            background-color: orangered;
+            text-align: center;
+            width: calc(100% - 100px);
+        }
+
+        .selector:hover {
+            background-color: transparent;
+            color: black;
+        }
+
+        .selector::first-letter {
+            font-size: 60px;
+        }
     </style>
 </head>
 
