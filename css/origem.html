@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <title>Origem CSS: Externo, Interno e Inline</title>
     <style>
-        /* ... */
+        /* podemos te css interno como aqui */
+        body {
+            background-color: aquamarine;
+            color: black;
+        }
     </style>
+    <link rel="stylesheet" href="css/externo.css">
 </head>
 
-<body>
+<body style="background-color: red"> <!--podemos ter css também inline que prevalece sobre os anteriores-->
     <h1>E agora?</h1>
 </body>
 
