@@ -5,7 +5,56 @@
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+        div {
+            font-size: 60px;
+            padding: 30px;
+            border: solid 10px black
+        }
+
+        .static {
+            background-color: blueviolet;
+            position: static;
+        }
+
+        .fixed {
+            background-color: blue;
+            position: fixed;
+            bottom: 50px;
+            right: 50px
+        }
+
+        .relative1 {
+            background-color: aqua;
+            position: relative;
+            width: 200px;
+            top: 650px;
+            left: 50px
+        }
+
+        .absolute1 {
+            background-color: coral;
+            position: absolute;
+            top: 150px
+        }
+
+        .relative2 {
+            position: relative;
+            top: 2000px;
+            width: 200px;
+            height: 250px;
+            background-color: aqua;
+        }
+        .absolute2 {
+            position: absolute;
+            background-color: chartreuse;
+            right: 20px;
+            bottom: 20px
+        }
+
+        .sticky {
+            position: sticky;
+            background-color: crimson;
+        }
     </style>
 </head>
 
