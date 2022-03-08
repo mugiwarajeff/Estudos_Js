@@ -9,7 +9,7 @@
     <style>
         .cabecalho {
             background-color: rgb(0, 0, 0);
-            border-bottom: 5px solid rgb(2, 145, 202);
+            border-bottom: 5px solid #0291ca;
             height: 100px;
         }
 
@@ -18,10 +18,11 @@
         
 
         }
-        a {
+        li > a {
+            padding: 20px;
             font-family: oswald, sans-serif;
             text-decoration: none;
-            color: white;
+            color: aliceblue;
         }
 
         ul {
@@ -70,6 +71,9 @@
         }
 
         .autenticacao a {
+            font-family: oswald, sans-serif;
+            text-decoration: none;
+            color: aliceblue;
             padding: 15px;
             font-size: 20px;
         }
@@ -80,16 +84,14 @@
             align-content: center;
         }
 
-        li:hover {
+        li > a:hover {
             border-radius: 15px;
             background-color: rgb(2, 145, 202);
-            color: #000;
+            color: black;
         }
-
 
         li{
             align-content: center;
-            padding: 20px;
             margin: 20px;
 
         }
@@ -98,7 +100,6 @@
                 margin: 0px;
             }
         }
-
 
     </style>
 </head>
@@ -116,16 +117,16 @@
         <nav class="menu">
             <ul>
                 <li>
-                    <a href="#inicio">Início</a>
+                    <a id="inicio" href="#inicio">Início</a>
                 </li>
                 <li>
-                    <a href="#cursos">Cursos</a>
+                    <a id="cursos" href="#cursos">Cursos</a>
                 </li>
                 <li>
-                    <a href="#sobre">Sobre</a>
+                    <a id="sobre" href="#sobre">Sobre</a>
                 </li>
                 <li>
-                    <a href="#contato">Contato</a>
+                    <a id="contato" href="#contato">Contato</a>
                 </li>
             </ul>
         </nav>
@@ -136,17 +137,21 @@
     </header>
 
     <script>
-        function pegaHash(){
-            setInterval(() => {
-                if (window.location.hash){
-            const hash = window.location.hash;
-            console.log(hash);
+    setInterval(() => {
+        if (window.location.hash){
+            let hash = window.location.hash;
+            document.querySelectorAll("li > a").forEach(element => {
+                console.log(element.getAttribute("href"));
+                if (element.getAttribute("href") == hash){
+                    element.style.backgroundColor = "#0291ca";
+                    element.style.borderRadius = "15px"
+                } else{
+                    element.style.backgroundColor = "";
+                }
+            });
+            
         }
-            }, 500)
-       
-    }
-
-    pegaHash();
+    })
     </script>
 </body>
 
