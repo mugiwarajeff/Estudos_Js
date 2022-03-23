@@ -10,7 +10,16 @@
     <div>Segundo</div>
     <div class="terceiro ultimo">.terceiro .ultimo</div>
     <script>              
-        // ...
+        const primeiro = document.getElementById("primeiro");
+        primeiro.classList.add("destaque");
+
+        const segundo = document.getElementsByTagName("div");
+        const segundoEmArray = Array.from(segundo)
+        segundoEmArray.forEach(elemento => elemento.classList.add("destaque"))
+        segundoEmArray.forEach(elemento => elemento.classList.remove("destaque"))
+
+        const terceiro = Array.from(document.getElementsByClassName("ultimo"));
+        terceiro.forEach(elemento => elemento.classList.add("destaque"))
     </script>
 </body>
 </html>
