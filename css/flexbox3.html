@@ -6,7 +6,18 @@
     <title>Flexbox #03</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+        }
+        .flex-container div {
+            flex-basis: 200px;
+            width: 140px;
+        }
+
+        .flex-container div:nth-child(2){
+            flex: 0 1 300px;
+        }
     </style>
 </head>
 
