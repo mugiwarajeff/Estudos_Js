@@ -9,9 +9,18 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <a wait-5seconds href="https://google.com.br">Google</a>
     </div>
     <script>
-        // ...
+        function depoisDe5s(e){
+            e.preventDefault();
+            console.log("em 5 segundos...");
+            setTimeout(() => {
+                window.location.href = e.target.href
+            }, 5000)
+        }
+
+        const a = document.querySelector("[wait-5seconds]");
+        a.onclick = depoisDe5s
     </script>
 </body>

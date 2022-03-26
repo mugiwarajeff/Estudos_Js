@@ -10,6 +10,19 @@
 <body class="conteudo exercicio">
     <div>Elemento</div>
     <script>
-        // ...
+        const item = document.querySelector("div");
+
+        item.onmousemove = e => {
+            const divElemento = e.target;
+
+            divElemento.style.cursor = "move";
+            divElemento.style.position = "absolute";
+
+            if (e.buttons) {
+                divElemento.style.top = `${e.clientY - (divElemento.clientHeight / 2)}px`
+                divElemento.style.left = `${e.clientX - (divElemento.clientWidth / 2)}px`
+            }
+        }
+
     </script>
 </body>
