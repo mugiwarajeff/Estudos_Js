@@ -8,7 +8,8 @@
     height: 700px;
     width: 1200px;
     position: absolute;
-    top: 150px
+    top: 150px;
+    overflow: hidden;
 }
 
 .bird-container img {
@@ -25,6 +26,7 @@
     justify-content: space-between;
     height: 100%;
     align-items: center;
+    position: relative;
 }
 .barreira-bottom-container,
 .barreira-top-container {
@@ -38,7 +40,7 @@
 }
 
 .barreira-head {
-    height: 30px;
+    height: 50px;
     width: 90px;
     background: linear-gradient(90deg, #639301, #A5E82E);
     border: 2px solid black
