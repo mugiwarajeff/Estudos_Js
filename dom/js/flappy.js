@@ -1,40 +1,35 @@
-function geraBarreira(initialPosition) {
-    let divBarreiraContainer = document.createElement("div");
-    divBarreiraContainer.classList.add("barreiras-container");
-    divBarreiraContainer.style.right = `${initialPosition}px`
+function barreira(elementType, elementClass){
+    const elemento = document.createElement(elementType);
+    const head = document.createElement(elementType);
+    const body = document.createElement(elementType)
 
-    let divBarreiraTopContainer = document.createElement("div");
-    divBarreiraTopContainer.classList.add("barreira-top-container")
+    elemento.classList.add(elementClass);
+    head.classList.add("barreira-head")
+    body.classList.add("barreira-body")
 
-    let divBarreiraBottomContainer = document.createElement("div");
-    divBarreiraBottomContainer.classList.add("barreira-bottom-container");
-
-    let barreiraBody = document.createElement("div");
-    barreiraBody.classList.add("barreira-body");
-
-    let barreiraHead = document.createElement("div");
-    barreiraHead.classList.add("barreira-head");
-
-    let barreiraBody2 = document.createElement("div");
-    barreiraBody2.classList.add("barreira-body");
-
-    let barreiraHead2 = document.createElement("div");
-    barreiraHead2.classList.add("barreira-head");
-
-    divBarreiraBottomContainer.appendChild(barreiraBody);
-    divBarreiraBottomContainer.appendChild(barreiraHead);
-
-    divBarreiraTopContainer.appendChild(barreiraBody2);
-    divBarreiraTopContainer.appendChild(barreiraHead2);
-
-    divBarreiraContainer.appendChild(divBarreiraTopContainer);
-    divBarreiraContainer.appendChild(divBarreiraBottomContainer);
-
-    let paginaGame = document.querySelector(".div-flappy-container");
-    paginaGame.appendChild(divBarreiraContainer)
-
-    moveBarreira();
+    elemento.appendChild(body);
+    elemento.appendChild(head);
+    return elemento;
 }
+
+function parBarreiras(elementType, elementClass, initialPosition){
+    const barreiraTop = new barreira("div", "barreira-top-container");
+    const barreiraBottom = new barreira("div", "barreira-bottom-container");
+
+    const barreirasContainer = document.createElement(elementType);
+    barreirasContainer.classList.add(elementClass);
+    barreirasContainer.style.left = initialPosition;
+    
+
+    barreirasContainer.appendChild(barreiraTop);
+    barreirasContainer.appendChild(barreiraBottom);
+    return barreirasContainer;
+}
+
+const b1 = new parBarreiras("div", "barreiras-container", "0px");
+const b2 = new parBarreiras("div", "barreiras-container", "600px");
+document.querySelector("[wm-flappy]").appendChild(b1);
+document.querySelector("[wm-flappy]").appendChild(b2);
 
 function moveBarreira(){
     let initialPosition = 0;
