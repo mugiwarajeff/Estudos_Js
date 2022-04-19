@@ -40,23 +40,6 @@ const b2 = new parBarreiras("div", "barreiras-container", 1100);
 document.querySelector("[wm-flappy]").appendChild(b1);
 document.querySelector("[wm-flappy]").appendChild(b2);
 
-function moveBarreira(){
-    let initialPosition = 0;
-    let barreiras = document.querySelector(".barreiras-container");
-    let currentPosition = -600;
-    
-    let movimento = setInterval(()=> {
-        barreiras.style.right = `${currentPosition}px`;
-        currentPosition += 1;
-        console.log(barreiras.style.right)
-
-        if (barreiras.style.right == "700px"){
-            barreiras.parentNode.removeChild(barreiras);
-            clearInterval(movimento);
-            geraBarreira(-600);
-        }
-    },1) 
-}
 
 
 
