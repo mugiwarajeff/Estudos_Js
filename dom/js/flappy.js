@@ -15,11 +15,17 @@ function geraBarreira(initialPosition) {
     let barreiraHead = document.createElement("div");
     barreiraHead.classList.add("barreira-head");
 
+    let barreiraBody2 = document.createElement("div");
+    barreiraBody2.classList.add("barreira-body");
+
+    let barreiraHead2 = document.createElement("div");
+    barreiraHead2.classList.add("barreira-head");
+
     divBarreiraBottomContainer.appendChild(barreiraBody);
     divBarreiraBottomContainer.appendChild(barreiraHead);
 
-    divBarreiraTopContainer.appendChild(barreiraBody);
-    divBarreiraTopContainer.appendChild(barreiraHead);
+    divBarreiraTopContainer.appendChild(barreiraBody2);
+    divBarreiraTopContainer.appendChild(barreiraHead2);
 
     divBarreiraContainer.appendChild(divBarreiraTopContainer);
     divBarreiraContainer.appendChild(divBarreiraBottomContainer);
