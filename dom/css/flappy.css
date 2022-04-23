@@ -13,12 +13,13 @@
     display: flex;
 }
 
-.bird-container img {
+.bird-container img{
     width: 50px;
     height: 40px;
     position: absolute;
     left: calc(50%);
-    bottom: 50%;
+    bottom: 30%;
+    
 }
 
 .barreiras-container {
@@ -33,7 +34,6 @@
 .barreira-top-container {
     background: linear-gradient(90deg, #639301, #A5E82E);
     width: 70px;
-    height: 280px;
     display: flex;
     align-items: center;
     border-left: 2px solid black;
@@ -49,11 +49,11 @@
 
 
 .barreira-top-container {
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
 .barreira-bottom-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 
 .progresso {
