@@ -35,10 +35,10 @@ function parBarreiras(elementType, elementClass, initialPosition){
         currentPosition -= 1;
         barreirasContainer.style.left = `${currentPosition}px`;
 
-        //funcionalidade para se retirar da DOM
-        // if (currentPosition == -500){
-        //     barreirasContainer.parentNode.removeChild(barreirasContainer);
-        // }
+       // funcionalidade para se retirar da DOM
+        if (currentPosition < barreirasContainer.clientWi){
+            barreirasContainer.parentNode.removeChild(barreirasContainer);
+        }
     }
     setInterval(() => {
         moveParBarreira()
@@ -51,7 +51,7 @@ function birdMovimentation(){
     const bird = document.querySelector(".bird-container img");
     let birdTopDistance = 50;
 
-   setInterval(() => {
+   const fallBird = setInterval(() => {
        bird.style.bottom = `${birdTopDistance}%`;
        birdTopDistance -= 0.25
        
@@ -72,18 +72,31 @@ function birdMovimentation(){
            birdTopDistance += 10;
        }
    })
-
    
+   setInterval(() => {
+       const coordenadasX = bird.getBoundingClientRect().x;
+       const coordenadasY = bird.getBoundingClientRect().y;
+       const coordenadaBarrerTopX = document.querySelector(".barreira-top-container").getBoundingClientRect().x;
+       const coordenadaBarrerTopY = document.querySelector(".barreira-top-container").getBoundingClientRect().y;
+       const coordenadasBarrerBottomX = document.querySelector(".barreira-bottom-container").getBoundingClientRect().x;
+       const coordenadasBarrerBottomY = document.querySelector(".barreira-bottom-container").getBoundingClientRect().y;
+       console.log(coordenadasX);
+       console.log(coordenadaBarrerTopX);
+       console.log(coordenadasBarrerBottomX);
+
+       if (coordenadasX === coordenadaBarrerTopX && coordenadasY === coordenadaBarrerTopY){
+           clearInterval(fallBird)
+       }
+   }, 500)
 }
+
 
 function startBarreiras(){
-    setInterval(() => {
-        const b1 = new parBarreiras("div", "barreiras-container", 1600);
-        document.querySelector("[wm-flappy]").appendChild(b1);
-        startBarreiras()
-    }, 1500)
+    const b = new parBarreiras("div", "barreiras-container", 1600);
+    return document.querySelector("[wm-flappy]").appendChild(b);
 }
 
+startBarreiras();
 startBarreiras();
 birdMovimentation();
 
