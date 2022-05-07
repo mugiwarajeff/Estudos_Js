@@ -74,20 +74,24 @@ function birdMovimentation(){
    })
    
    setInterval(() => {
-       const coordenadasX = bird.getBoundingClientRect().x;
-       const coordenadasY = bird.getBoundingClientRect().y;
-       const coordenadaBarrerTopX = document.querySelector(".barreira-top-container").getBoundingClientRect().x;
-       const coordenadaBarrerTopY = document.querySelector(".barreira-top-container").getBoundingClientRect().y;
+       const birdRigth = bird.getBoundingClientRect().right;
+       const birdTop = bird.getBoundingClientRect().top;
+       const birdY = bird.getBoundingClientRect().y;
+       const birdX = bird.getBoundingClientRect().x;
+       const coordenadasGerais = document.querySelector(".barreira-top-container").getBoundingClientRect();
+       const barrerTopRight = document.querySelector(".barreira-top-container").getBoundingClientRect().right;
+       const barrerTopHeight = document.querySelector(".barreira-top-container").getBoundingClientRect().height;
+       const barrerTopY = document.querySelector(".barreira-top-container").getBoundingClientRect().y;
+       const barrerTopX = document.querySelector(".barreira-top-container").getBoundingClientRect().x;
        const coordenadasBarrerBottomX = document.querySelector(".barreira-bottom-container").getBoundingClientRect().x;
        const coordenadasBarrerBottomY = document.querySelector(".barreira-bottom-container").getBoundingClientRect().y;
-       console.log(coordenadasX);
-       console.log(coordenadaBarrerTopX);
-       console.log(coordenadasBarrerBottomX);
+       console.log(barrerTopHeight.toFixed(0));
+       console.log(birdY);
 
-       if (coordenadasX === coordenadaBarrerTopX && coordenadasY === coordenadaBarrerTopY){
+       if ( birdY < barrerTopHeight.toFixed(0)){ //birdX == barrerTopX && continuar daqui
            clearInterval(fallBird)
        }
-   }, 500)
+   }, 1)
 }
 
 
