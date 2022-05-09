@@ -40,10 +40,16 @@ function parBarreiras(elementType, elementClass, initialPosition){
             barreirasContainer.parentNode.removeChild(barreirasContainer);
         }
     }
-    setInterval(() => {
+    const barrerMove = setInterval(() => {
         moveParBarreira()
     }, 1);
+
+    function pararBarreira(){
+        clearInterval(barrerMove);
+    }
+    
     return barreirasContainer;
+
 }
 
 
@@ -74,22 +80,19 @@ function birdMovimentation(){
    })
    
    setInterval(() => {
-       const birdRigth = bird.getBoundingClientRect().right;
        const birdTop = bird.getBoundingClientRect().top;
-       const birdY = bird.getBoundingClientRect().y;
+       const birdLeft = bird.getBoundingClientRect().left;
        const birdX = bird.getBoundingClientRect().x;
-       const coordenadasGerais = document.querySelector(".barreira-top-container").getBoundingClientRect();
-       const barrerTopRight = document.querySelector(".barreira-top-container").getBoundingClientRect().right;
-       const barrerTopHeight = document.querySelector(".barreira-top-container").getBoundingClientRect().height;
-       const barrerTopY = document.querySelector(".barreira-top-container").getBoundingClientRect().y;
-       const barrerTopX = document.querySelector(".barreira-top-container").getBoundingClientRect().x;
+       const barrerTopTop = document.querySelector(".barreira-top-container").getBoundingClientRect().top;
+       const barrerTopHeight = Math.round(document.querySelector(".barreira-top-container").getBoundingClientRect().height);
+       const barrerTopWidth = Math.round(document.querySelector(".barreira-top-container").getBoundingClientRect().width);
+       const barrerTopLeft = document.querySelector(".barreira-top-container").getBoundingClientRect().left;
        const coordenadasBarrerBottomX = document.querySelector(".barreira-bottom-container").getBoundingClientRect().x;
        const coordenadasBarrerBottomY = document.querySelector(".barreira-bottom-container").getBoundingClientRect().y;
-       console.log(barrerTopHeight.toFixed(0));
-       console.log(birdY);
+       console.log(birdLeft, birdX);
 
-       if ( birdY < barrerTopHeight.toFixed(0)){ //birdX == barrerTopX && continuar daqui
-           clearInterval(fallBird)
+       if (birdTop < (barrerTopHeight + barrerTopTop + 20) && birdLeft > barrerTopLeft && birdLeft < barrerTopLeft + barrerTopWidth ){ 
+           clearInterval(fallBird);
        }
    }, 1)
 }
