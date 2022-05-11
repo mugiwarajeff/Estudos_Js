@@ -30,7 +30,6 @@ function parBarreiras(elementType, elementClass, initialPosition){
     barreirasContainer.appendChild(barreiraBottom);
 
     //função para se retirar da DOM
-
     function moveParBarreira(){
         currentPosition -= 1;
         barreirasContainer.style.left = `${currentPosition}px`;
@@ -41,15 +40,32 @@ function parBarreiras(elementType, elementClass, initialPosition){
         }
     }
     const barrerMove = setInterval(() => {
-        moveParBarreira()
+        moveParBarreira();
     }, 1);
 
-    function pararBarreira(){
-        clearInterval(barrerMove);
-    }
-    
+    comportamentoColisao(barrerMove)
+
     return barreirasContainer;
 
+}
+
+function comportamentoColisao(intervalo){
+    setInterval(() => {
+        const bird = document.querySelector(".bird-container img");
+        const birdPositionRelative = parseFloat(bird.style.bottom);
+        const birdLeft = bird.getBoundingClientRect().left;
+        const barrerTopHeight = Math.round(document.querySelector(".barreira-top-container").getBoundingClientRect().height);
+        const barrerBottomHeight = Math.round(document.querySelector(".barreira-bottom-container").getBoundingClientRect().height);
+        const barrerTopWidth = Math.round(document.querySelector(".barreira-top-container").getBoundingClientRect().width);
+        const barrerTopLeft = document.querySelector(".barreira-top-container").getBoundingClientRect().left;
+        
+        if (birdPositionRelative > (92.5 - (barrerTopHeight / 700 * 100).toFixed(2)) && (birdLeft > barrerTopLeft - 60) && birdLeft < barrerTopLeft + barrerTopWidth ){ 
+            clearInterval(intervalo);
+        }
+        if (birdPositionRelative < (barrerBottomHeight / 700 * 100).toFixed(2) && birdLeft > barrerTopLeft - 60 && birdLeft < barrerTopLeft + barrerTopWidth){
+            clearInterval(intervalo);
+        }
+    }, 1)
 }
 
 
@@ -78,23 +94,8 @@ function birdMovimentation(){
            birdTopDistance += 10;
        }
    })
-   
-   setInterval(() => {
-       const birdTop = bird.getBoundingClientRect().top;
-       const birdLeft = bird.getBoundingClientRect().left;
-       const birdX = bird.getBoundingClientRect().x;
-       const barrerTopTop = document.querySelector(".barreira-top-container").getBoundingClientRect().top;
-       const barrerTopHeight = Math.round(document.querySelector(".barreira-top-container").getBoundingClientRect().height);
-       const barrerTopWidth = Math.round(document.querySelector(".barreira-top-container").getBoundingClientRect().width);
-       const barrerTopLeft = document.querySelector(".barreira-top-container").getBoundingClientRect().left;
-       const coordenadasBarrerBottomX = document.querySelector(".barreira-bottom-container").getBoundingClientRect().x;
-       const coordenadasBarrerBottomY = document.querySelector(".barreira-bottom-container").getBoundingClientRect().y;
-       console.log(birdLeft, birdX);
 
-       if (birdTop < (barrerTopHeight + barrerTopTop + 20) && birdLeft > barrerTopLeft && birdLeft < barrerTopLeft + barrerTopWidth ){ 
-           clearInterval(fallBird);
-       }
-   }, 1)
+   comportamentoColisao(fallBird)
 }
 
 
