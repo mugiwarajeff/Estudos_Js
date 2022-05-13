@@ -1,3 +1,6 @@
+this.movimentation = true;
+this.contagemDePontos = 0;
+
 function barreira(elementType, elementClass, barrerHeight){
     const elemento = document.createElement(elementType);
     const head = document.createElement(elementType);
@@ -15,14 +18,13 @@ function barreira(elementType, elementClass, barrerHeight){
     return elemento;
 }
 
-function parBarreiras(elementType, elementClass, initialPosition, movimentation=true){
+function parBarreiras(elementType, elementClass, initialPosition){
     const randomHeight = Math.random() * 300 + 100;
     const gameContainerHeight = document.querySelector(".div-flappy-container").clientHeight;
     const barrersGapFixed = 250;
     const barreiraTop = new barreira("div", "barreira-top-container", randomHeight);
     const barreiraBottom = new barreira("div", "barreira-bottom-container", gameContainerHeight - randomHeight - barrersGapFixed);
     let currentPosition = initialPosition;
-    this.movimentation = movimentation;
 
     const barreirasContainer = document.createElement(elementType);
     barreirasContainer.classList.add(elementClass);
@@ -42,16 +44,19 @@ function parBarreiras(elementType, elementClass, initialPosition, movimentation=
         }
     }
 
-        this.barrerMove = setInterval(() => {
-            moveParBarreira();
+        let barrerMove = setInterval(() => {
+            if(window.movimentation == true){
+                moveParBarreira();
+            }else{
+                clearInterval(barrerMove);
+            }
         }, 1);
-        console.log(this.barrerMove)
-        comportamentoColisao(this.barrerMove, barreiraBottom, barreiraTop);
+    
+        comportamentoColisao(barreiraBottom, barreiraTop);
     return barreirasContainer;
 }
-
-
-function comportamentoColisao(intervalo, barreiraBottom, barreiraTop){
+this.movimentation = true;
+function comportamentoColisao(barreiraBottom, barreiraTop){
     setInterval(() => {
         const bird = document.querySelector(".bird-container img");
         const birdPositionRelative = parseFloat(bird.style.bottom);
@@ -66,16 +71,19 @@ function comportamentoColisao(intervalo, barreiraBottom, barreiraTop){
         //const barrerTopLeft = document.querySelector(".barreira-top-container").getBoundingClientRect().left;
         
         if (birdPositionRelative > (92.5 - (barrerTopHeight / 700 * 100).toFixed(2)) && (birdLeft > barrerTopLeft - 60) && birdLeft < barrerTopLeft + barrerTopWidth ){ 
-            clearInterval(intervalo)
             clearInterval(fallBird);
-        }
-        if (birdPositionRelative < (barrerBottomHeight / 700 * 100).toFixed(2) && birdLeft > barrerTopLeft - 60 && birdLeft < barrerTopLeft + barrerTopWidth){
-            clearInterval(intervalo);
+            clearInterval(autoInst);
+            window.movimentation = false;
+        }else if (birdPositionRelative < (barrerBottomHeight / 700 * 100).toFixed(2) && birdLeft > barrerTopLeft - 60 && birdLeft < barrerTopLeft + barrerTopWidth){
+            window.movimentation = false;
             clearInterval(fallBird);
+            clearInterval(autoInst);
+        }else if (birdLeft == barrerTopLeft + barrerTopWidth){
+            this.contagemDePontos += 1;
+            console.log(this.contagemDePontos)
         }
     }, 1)
 }
-
 
 function birdMovimentation(){
     const bird = document.querySelector(".bird-container img");
@@ -104,15 +112,23 @@ function birdMovimentation(){
    })
 }
 
+function atualizaScore(){
+    setInterval(() => {
+        document.querySelector(".progresso").innerText = this.contagemDePontos;
+    }, 100);
+}
 
 function startBarreiras(){
     const b = new parBarreiras("div", "barreiras-container", 1600);
     return document.querySelector("[wm-flappy]").appendChild(b);
 }
 
-startBarreiras();
-startBarreiras();
-startBarreiras();
+
+this.autoInst = setInterval(()=> {
+        startBarreiras();
+    }, 1000)
+
+atualizaScore();
 birdMovimentation();
 
 

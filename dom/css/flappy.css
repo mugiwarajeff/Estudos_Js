@@ -29,7 +29,7 @@
     height: 100%;
     align-items: center;
     position: relative;
-    margin-right: 300px;
+    margin-right: 50px;
 }
 .barreira-bottom-container,
 .barreira-top-container {
@@ -59,7 +59,7 @@
 
 .progresso {
     font-family: Pixel, sans-serif;
-    font-size: 60px;
+    font-size: 120px;
     color: white;
     position: absolute;
     right: 10px;
