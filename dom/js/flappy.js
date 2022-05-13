@@ -37,6 +37,7 @@ function parBarreiras(elementType, elementClass, initialPosition){
     function moveParBarreira(){
         currentPosition -= 1;
         barreirasContainer.style.left = `${currentPosition}px`;
+        barreirasContainer.style.display = `flex`;
 
        // funcionalidade para se retirar da DOM
         if (currentPosition < barreirasContainer.clientWi){
@@ -74,10 +75,12 @@ function comportamentoColisao(barreiraBottom, barreiraTop){
             clearInterval(fallBird);
             clearInterval(autoInst);
             window.movimentation = false;
+            document.querySelector(".game-over").style.display = "block"
         }else if (birdPositionRelative < (barrerBottomHeight / 700 * 100).toFixed(2) && birdLeft > barrerTopLeft - 60 && birdLeft < barrerTopLeft + barrerTopWidth){
             window.movimentation = false;
             clearInterval(fallBird);
             clearInterval(autoInst);
+            document.querySelector(".game-over").style.display = "block"
         }else if (birdLeft == barrerTopLeft + barrerTopWidth){
             this.contagemDePontos += 1;
             console.log(this.contagemDePontos)
@@ -119,8 +122,8 @@ function atualizaScore(){
 }
 
 function startBarreiras(){
-    const b = new parBarreiras("div", "barreiras-container", 1600);
-    return document.querySelector("[wm-flappy]").appendChild(b);
+    const a = new parBarreiras("div", "barreiras-container", 1700);
+    return document.querySelector("[wm-flappy]").appendChild(a);
 }
 
 

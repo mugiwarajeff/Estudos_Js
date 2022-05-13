@@ -23,7 +23,7 @@
 }
 
 .barreiras-container {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
@@ -64,4 +64,16 @@
     position: absolute;
     right: 10px;
     top: 10px;
+    z-index: 1;
+}
+
+.game-over{
+    font-family: Pixel, sans-serif;
+    font-size: 160px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    right: 220px;
+    top: 250px;
+    display: none;
+    z-index: 1;
 }
