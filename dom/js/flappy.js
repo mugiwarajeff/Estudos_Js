@@ -80,14 +80,14 @@ function birdMovimentation(){
        const coordenadaBarrerTopY = document.querySelector(".barreira-top-container").getBoundingClientRect().y;
        const coordenadasBarrerBottomX = document.querySelector(".barreira-bottom-container").getBoundingClientRect().x;
        const coordenadasBarrerBottomY = document.querySelector(".barreira-bottom-container").getBoundingClientRect().y;
-       console.log(coordenadasX);
-       console.log(coordenadaBarrerTopX);
-       console.log(coordenadasBarrerBottomX);
+       console.log(coordenadasX, coordenadaBarrerTopX);
+       console.log(coordenadasY, coordenadaBarrerTopY);
+       //console.log(coordenadasBarrerBottomX);
 
        if (coordenadasX === coordenadaBarrerTopX && coordenadasY === coordenadaBarrerTopY){
            clearInterval(fallBird)
        }
-   }, 500)
+   }, 1)
 }
 
 
