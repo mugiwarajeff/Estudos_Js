@@ -15,13 +15,14 @@ function barreira(elementType, elementClass, barrerHeight){
     return elemento;
 }
 
-function parBarreiras(elementType, elementClass, initialPosition){
+function parBarreiras(elementType, elementClass, initialPosition, movimentation=true){
     const randomHeight = Math.random() * 300 + 100;
     const gameContainerHeight = document.querySelector(".div-flappy-container").clientHeight;
     const barrersGapFixed = 250;
     const barreiraTop = new barreira("div", "barreira-top-container", randomHeight);
     const barreiraBottom = new barreira("div", "barreira-bottom-container", gameContainerHeight - randomHeight - barrersGapFixed);
     let currentPosition = initialPosition;
+    this.movimentation = movimentation;
 
     const barreirasContainer = document.createElement(elementType);
     barreirasContainer.classList.add(elementClass);
@@ -40,28 +41,31 @@ function parBarreiras(elementType, elementClass, initialPosition){
             barreirasContainer.parentNode.removeChild(barreirasContainer);
         }
     }
-    const barrerMove = setInterval(() => {
-        moveParBarreira();
-    }, 1);
-    
-    comportamentoColisao(barrerMove, barreiraTop, barreiraBottom);
-    return barreirasContainer;
 
+        this.barrerMove = setInterval(() => {
+            moveParBarreira();
+        }, 1);
+        comportamentoColisao(this.barrerMove, barreiraBottom, barreiraTop);
+    return barreirasContainer;
 }
 
-function comportamentoColisao(intervalo, barreiraTop, barreiraBottom, setMovimentation=true){
+function comportamentoColisao(intervalo, barreiraBottom, barreiraTop){
     setInterval(() => {
         const bird = document.querySelector(".bird-container img");
         const birdPositionRelative = parseFloat(bird.style.bottom);
         const birdLeft = bird.getBoundingClientRect().left;
         const barrerTopHeight = Math.round(barreiraTop.getBoundingClientRect().height);
+        //const barrerTopHeight = Math.round(document.querySelector(".barreira-top-container").getBoundingClientRect().height);
         const barrerBottomHeight = Math.round(barreiraBottom.getBoundingClientRect().height);
+        //const barrerBottomHeight = Math.round(document.querySelector(".barreira-bottom-container").getBoundingClientRect().height);
         const barrerTopWidth = Math.round(barreiraTop.getBoundingClientRect().width);
+        //const barrerTopWidth = Math.round(document.querySelector(".barreira-top-container").getBoundingClientRect().width);
         const barrerTopLeft = barreiraTop.getBoundingClientRect().left;
+        //const barrerTopLeft = document.querySelector(".barreira-top-container").getBoundingClientRect().left;
         
         if (birdPositionRelative > (92.5 - (barrerTopHeight / 700 * 100).toFixed(2)) && (birdLeft > barrerTopLeft - 60) && birdLeft < barrerTopLeft + barrerTopWidth ){ 
-           clearInterval(intervalo)
-           clearInterval(fallBird);
+            clearInterval(intervalo);
+            clearInterval(fallBird);
         }
         if (birdPositionRelative < (barrerBottomHeight / 700 * 100).toFixed(2) && birdLeft > barrerTopLeft - 60 && birdLeft < barrerTopLeft + barrerTopWidth){
             clearInterval(intervalo);
