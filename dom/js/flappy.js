@@ -56,7 +56,8 @@ function parBarreiras(elementType, elementClass, initialPosition){
         comportamentoColisao(barreiraBottom, barreiraTop);
     return barreirasContainer;
 }
-this.movimentation = true;
+
+
 function comportamentoColisao(barreiraBottom, barreiraTop){
     setInterval(() => {
         const bird = document.querySelector(".bird-container img");
