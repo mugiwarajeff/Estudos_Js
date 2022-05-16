@@ -8,10 +8,8 @@
 
 // console.log(`meu nome é ${nome}`);0,
 
-
-sequencia = {
-    _numero : -1000,
-    get numero(){this._numero++;}
+function demonstra(...qualquer){
+    console.log(qualquer);
 }
 
-setInterval(() => {console.log(sequencia.numero)}, 100);
+demonstra(1, 2, 3, 4, "qualquer coisa");

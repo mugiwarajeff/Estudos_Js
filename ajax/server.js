@@ -32,6 +32,14 @@ app.post("/upload", (req, res) => {
         res.send("Carregamento concluido!")
     })
 })
+
+app.post("/formulario", (req, res) => {
+    res.send({
+        ...req.body,
+        id: 1
+    })
+})
+
 app.listen(door, () => {
     console.log("rodando...")
 });
