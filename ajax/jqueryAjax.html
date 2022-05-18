@@ -14,6 +14,35 @@
     <div id="post"></div>
 
     <script>
-        // ...
+        function exibirResultado(id, data){
+            const texto = JSON.stringify(data);
+            document.getElementById(id).innerHTML = texto;
+        }
+
+        //O jquery pode ser referenciado pelo $
+        $.ajax({
+            url: 'parOuImpar',
+            data: {
+                numero: 5
+            },
+            success(data){
+                exibirResultado("get", data)
+            }
+        })
+
+        $.ajax({
+            url: "formulario",
+            method: "post",
+            data: {
+                nome: "Jefferson",
+                sobrenome: "Cerqueira"
+            },
+            success(data){
+                exibirResultado("post", data)
+            },
+            error(e){
+                exibirResultado("post", e)
+            }
+        })
     </script>
 </body>

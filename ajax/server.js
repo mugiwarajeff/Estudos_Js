@@ -40,6 +40,15 @@ app.post("/formulario", (req, res) => {
     })
 })
 
+app.get("/parOuImpar", (req, res) => {
+    console.log(req.query.numero)
+    const par = parseInt(req.query.numero) % 2 === 0;
+    console.log(par)
+    res.send({
+        resultado: par ? "Par" : "Impar"
+    })
+})
+
 app.listen(door, () => {
     console.log("rodando...")
 });
