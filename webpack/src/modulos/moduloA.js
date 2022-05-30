@@ -1,0 +1,1 @@
+import moduloB from "./moduloB"
