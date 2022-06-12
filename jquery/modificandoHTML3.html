@@ -20,6 +20,13 @@
             { nome: 'Julia', nota: 9.7 }
         ]
         
-        // ...
+        $(document).ready( function (){
+            tableList = pessoas.map( (pessoa) => {
+            return $("<tr>").append([`<td>${pessoa.nome}</td>`, `<td>${pessoa.nota}</td>`])
+        })
+        
+        const table = $("<table>").append(tableList);
+        $("body").append(table)
+        })
     </script>
 </body>

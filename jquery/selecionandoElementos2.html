@@ -81,6 +81,25 @@
         <p>Cod3r Ensino</p>
     </footer>
     <script>
-        // ...
+        const comBorda = {"border": "solid 3px black"};
+        const semBorda = {"border": "none"};
+
+        $("a[href='#link1']").parent().css(comBorda).css(semBorda);
+
+        $("li:last").prev().css(comBorda).css(semBorda);
+        $("a[href='#link3']").parent().next().css(comBorda);
+
+        $("a[href='#link1']").parents().css(comBorda).css(semBorda);
+        $("[href='#link2']").parentsUntil($("body")).css(comBorda).css(semBorda);
+
+        $("main").children().css(comBorda).css(semBorda);
+        $("main").find("p").css(comBorda);
+
+        const elementoDom = document.getElementsByClassName("conteudo-principal");
+
+        //$(elementoDom).css("background-color", "black");
+
+        $("main").children().each((i, e) => $(e).css(comBorda))
+
     </script>
 </body>
