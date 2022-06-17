@@ -28,6 +28,31 @@
     <div>Animar!</div>
 
     <script>
-        // ...
+        function changeWidth(value, duration, callback){
+            $("div").animate({ width: `+=${value}`}, duration, callback);
+
+        }
+
+        function moveInDiagonal(value, duration, callback){
+            $("div").animate({
+                top: `+=${value}`,
+                left: `+=${value}`
+            }, duration, callback);
+        }
+
+        function flip(value, duration, callback){
+            $("div").animate(
+            {
+                transform: `+=${value}`
+            },
+            {
+                step: function(value){
+                    $(this).css("transform", `rotate(${value}deg)`)
+                },
+                duration: duration
+            }, "linear", callback)
+        }
+
+        flip(720, 3000, moveInDiagonal(250, 2000, changeWidth(100, 1000, null)));
     </script>
 </body>

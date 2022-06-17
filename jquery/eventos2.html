@@ -21,6 +21,25 @@
     <input type="text" placeholder="Digite e Selecione">
     <div id="resultado2">?</div>
     <script>
-        // ...
+        const changeDetach = () => $("#div1").toggleClass("destaque");
+        $("#div1").hover(changeDetach, changeDetach);  //in this case we add two callback for the event hover, we can pass only 1 callback for this function, him will interpret like entries and exists
+        //$("#div1").on("mouseenter mouseleave", changeDetach); //another option for the hover event
+
+        //$("#div1").one("mouseenter", e => alert(`Aviso importante: vocë passou o mouse sobre a div1`)); //this event occurs only one time
+
+        $("#div1").dblclick(e => $("#div1").fadeOut(1000).fadeIn(1000)); //this event occours in case of double click in that div1
+
+        $(window).resize( e => { //this event is responsable of capture the window size modification 
+            const width = $(window).width();
+            const height = $(window).height();
+            $("#resultado1").html(`Largura: ${width} Altura: ${height}`) 
+        })
+
+        $("input").select(e => {   //this function capture the part of text when him in selected state
+            const begin = e.target.selectionStart; 
+            const end = e.target.selectionEnd;
+            $("#resultado2").html(e.target.value.substring(begin, end));
+        })
+
     </script>
 </body>

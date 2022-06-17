@@ -15,6 +15,23 @@
     <div id='div3'>3</div>
     <div id='resultado'></div>
     <script>
-        // ...
+        const fonte = $("#div1").css("font-family"); //Podemos capturar um estilo especifico com o metodo CSS
+        $("#resultado").append(`A fonte é ${fonte}`);
+    
+        $("#div1").css("font-size", "3em");
+        $("#div1").css({"font-size": "3.5em", "color": "yellow"}); 
+
+        $("#div1").css("font-size", function (){   //retornando uma callback para a funçäo CSS
+            return `${2*2}em`
+        })
+
+        $("#div2").addClass("destaque"); //adicionando uma classe css
+        //$("#div2").removeClass("destaque"); //removendo a classe adicionada anteriormente
+        const hasClass = $("#div2").hasClass("destaque"); //verificando se um determinado elemento possui a classe
+        $("#resultado").append(`<br> tem classe: ${hasClass}`);
+
+        $("#div3").toggleClass("destaque"); //toggle adiciona se nao tiver e remove se tiver
+        //$("#div3").toggleClass("destaque");
+
     </script>
 </body>
