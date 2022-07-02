@@ -13,6 +13,9 @@
             .then(html => {
                 destino.innerHTML = html
             })
+            .catch((e) => {
+                console.log(e);
+            })
     }
 
     function configurarLinks() {

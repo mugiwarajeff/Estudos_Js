@@ -12,4 +12,4 @@ function demonstra(...qualquer){
     console.log(qualquer);
 }
 
-demonstra(1, 2, 3, 4, "qualquer coisa");
+demonstra(1, 2, 3, 4, "qualquer coisa");   
