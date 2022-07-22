@@ -135,6 +135,27 @@
 <hr>
 
 <!-- Slider -->
+<div>
+    <div class="carousel slide" id="slide" data-ride="carousel">
+        <div class="carousel-inner bg-dark">
+            <div class="carousel-item active">
+                <img src="../imgs/slide1.png" alt="slide 1" class="d-block mx-auto">
+            </div>
+            <div class="carousel-item">
+                <img src="../imgs/slide2.png" alt="slide 1" class="d-block mx-auto">
+            </div>
+            <div class="carousel-item">
+                <img src="../imgs/slide3.png" alt="slide 1" class="d-block mx-auto">
+            </div>
+        </div>
+        <a href="#slide" class="carousel-control-prev" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a href="#slide" class="carousel-control-next" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
 
 <h1 class="mt-5">7. Accordion -
     <small>
@@ -144,6 +165,49 @@
 <hr>
 
 <!-- Accordion -->
+<div>
+    <div class="mb-5" id="accordion">
+        <div class="card">
+            <div class="card-header" id="pergunta">
+                <div class="h5-mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#resposta1">
+                        Qual vai ser a pergunta...
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="resposta1" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+                Posso dizer ?
+            </div>
+        </div>
+            <div class="card-header" id="pergunta">
+                <div class="h5-mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#resposta2">
+                        Pergunta numero dois
+                    </button>
+                </div>
+        </div>
+        <div id="resposta2" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+                resposta 2
+            </div>
+        </div>
+            <div class="card-header" id="pergunta">
+                <div class="h5-mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#resposta3">
+                        pergunta numero tres
+                    </button>
+                </div>
+            </div>
+        <div id="resposta3" class="collapse" data-parent="#accordion">
+            <div class="card-body">
+                resposta3
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js">
     // ...
