@@ -23,7 +23,11 @@
     "popper.js": "1.14.3",
     "postcss-loader": "2.1.5",
     "sass": "^1.54.0",
+<<<<<<< HEAD
     "sass-loader": "^7.3.1",
+=======
+    "sass-loader": "7.0.1",
+>>>>>>> 8a0cdabb90f8fe8b00b961f12e1804eee9f132e7
     "style-loader": "0.21.0",
     "uglifyjs-webpack-plugin": "1.2.5",
     "webpack": "4.4.0",
