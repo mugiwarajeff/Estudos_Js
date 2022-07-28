@@ -2,15 +2,21 @@ import $ from "jquery";
 
 const duration = 600;
 
+import {onLoadHtmlSuccess} from "../core/includes";
+
 
 function filterByCity(city){
     $("[wm-city]").each(function(i,e){
         const isTarget = $(this).attr("wm-city") === city || city === null;
 
         if(isTarget){
+            $(this).parent().removeClass("d-none");
             $(this).fadeIn(duration);
         }else{
-            $(this).fadeOut(duration);
+
+            $(this).fadeOut(duration, () => {
+                $(this).parent().addClass("d-none")
+            });
         }
     })
 }
@@ -41,7 +47,10 @@ $.fn.cityButtons = function(){
     return this;
 }
 
-$("[wm-city-buttons]").cityButtons();
+onLoadHtmlSuccess(function(){
+    $("[wm-city-buttons]").cityButtons();
+})
+
 
 
 
