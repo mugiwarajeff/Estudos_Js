@@ -6,3 +6,4 @@ import "jquery"
 import "bootstrap"
 import "./js/core/includes.js"
 
+import "./js/plugins/cityButtons"
